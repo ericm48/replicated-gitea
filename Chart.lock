@@ -1,0 +1,12 @@
+dependencies:
+- name: replicated
+  repository: oci://registry.replicated.com/library
+  version: 1.0.0-beta.31
+- name: postgresql
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 13.4.6
+- name: common
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 2.27.2
+digest: sha256:1f4fe26a669737224729a76f5bfb600d969b3f204184ba96459da63a89278e06
+generated: "2024-12-06T16:59:27.462927099-07:00"
