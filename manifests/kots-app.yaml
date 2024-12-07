@@ -1,20 +1,17 @@
 #
 # kots-app.yaml
 #
-apiVersion: kots.io/v1beta2
-kind: HelmChart
+apiVersion: kots.io/v1beta1
+kind: Application
 metadata:
   name: gitea
 spec:
-  # chart identifies a matching chart from a .tgz
-  chart:
-    name: gitea
-    chartVersion: 1.0.6
-  optionalValues:
-  - when: 'repl{{ eq Distribution "embedded-cluster" }}'
-    recursiveMerge: false
-    values:
-      service:
-        type: NodePort
-        nodePorts:
-          http: "32000"
+  title: Gitea
+  statusInformers:
+    - deployment/gitea
+  ports:
+    - serviceName: "gitea"
+      servicePort: 3000
+      localPort: 32000
+      applicationUrl: "http://gitea"
+  icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/icon/color/kubernetes-icon-color.png
