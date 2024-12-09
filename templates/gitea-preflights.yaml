@@ -18,7 +18,7 @@ stringData:
         - clusterVersion:
             outcomes:
               - fail:
-                  when: "< 1.23.0"
+                  when: "< 1.29.0"
                   message: |-
                     Your cluster is running a version of Kubernetes that is not supported and your installation will not succeed. To continue, upgrade your cluster to Kubernetes 1.23.0 or later.
                   uri: https://www.kubernetes.io
